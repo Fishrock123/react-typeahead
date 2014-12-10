@@ -111,7 +111,6 @@ var Typeahead = React.createClass({
 
   _onEnter: function(event) {
     if (!this.refs.sel.state.selection) {
-      this._onTab(event)
       return this.props.onKeyDown(event);
     }
     this._onOptionSelected(this.refs.sel.state.selection);
