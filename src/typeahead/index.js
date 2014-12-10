@@ -111,6 +111,10 @@ var Typeahead = React.createClass({
 
   _onEnter: function(event) {
     if (!this.refs.sel.state.selection) {
+      var nEntry = this.refs.entry.getDOMNode()
+      this.setState({visible: [],
+                     selection: nEntry.value,
+                     entryValue: nEntry.value})
       return this.props.onKeyDown(event);
     }
     this._onOptionSelected(this.refs.sel.state.selection);
